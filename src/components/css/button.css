@@ -1,0 +1,9 @@
+.main-button{
+    background-color: #292E49;
+    border: none;
+    width: 113px;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: 20px;
+    cursor: pointer;
+  }

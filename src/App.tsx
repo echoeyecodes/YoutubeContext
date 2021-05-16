@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import {useHistory} from 'react-router-dom'
+import useApi from './hooks/api';
+import Button from './components/button';
+import ProgressModal from './components/progressModal';
 
 function App() {
+  const [url, setUrl] = useState("")
+  const {isLoading, result, error, sendRequest} = useApi<any>()
+  const history = useHistory()
+
+  const fetchData = () =>{
+    history.push(`video?url=${url}`)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="index">
+      
+      <div id="card">
+        <h3>Enter Youtube URL</h3>
+        <input onChange={(evt) => setUrl(evt.target.value)} type="url" value={url} placeholder="e.g https://youtube.com/watch?ods77sadx" />
+        <Button disabled={isLoading} onPress={fetchData} text="I'm driving" />
+      </div>
+
+      {isLoading && <ProgressModal text="LMAO" />}
     </div>
   );
 }

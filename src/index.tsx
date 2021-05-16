@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Video from './pages/Video';
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom'
+import Footer from './components/footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <>
+    <Router>
+    <Switch>
+
+    <Route path="/video">
+        <Video />
+      </Route>
+
+      
+      <Route path="/">
+        <App />
+      </Route>
+      
+    </Switch>
+    </Router>
+
+    <Footer />
+    </>
   </React.StrictMode>,
   document.getElementById('root')
 );

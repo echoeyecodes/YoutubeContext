@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 import useApi from './hooks/api';
 import Button from './components/button';
 import ProgressModal from './components/progressModal';
+import Footer from './components/footer';
 
 function App() {
   const [url, setUrl] = useState("")
@@ -22,6 +23,8 @@ function App() {
         <input onChange={(evt) => setUrl(evt.target.value)} type="url" value={url} placeholder="e.g https://youtube.com/watch?ods77sadx" />
         <Button disabled={isLoading} onPress={fetchData} text="I'm driving" />
       </div>
+
+      <Footer />
 
       {isLoading && <ProgressModal text="LMAO" />}
     </div>

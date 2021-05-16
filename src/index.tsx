@@ -5,12 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Video from './pages/Video';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom'
-import Footer from './components/footer';
 
 ReactDOM.render(
   <React.StrictMode>
-
-    <>
     <Router>
     <Switch>
 
@@ -25,9 +22,6 @@ ReactDOM.render(
       
     </Switch>
     </Router>
-
-    <Footer />
-    </>
   </React.StrictMode>,
   document.getElementById('root')
 );

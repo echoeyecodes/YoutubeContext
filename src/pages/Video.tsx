@@ -97,7 +97,7 @@ function Video() {
           setTime({name: "endTime", value: time})
           setState("GRAB")
         }else{
-          window.location.replace(result)
+          window.open(result)
         }
         resetState()
       }

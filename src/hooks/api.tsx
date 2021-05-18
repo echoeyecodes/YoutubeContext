@@ -6,7 +6,7 @@ type ERROR_TYPE = {
     message: string
 }
 
-const BASE_URL = "http://localhost:3001"
+const BASE_URL = "https://rich-experience-313911.nw.r.appspot.com"
 type API_TYPE = "GET" | "POST" | "PUT"
 
 
